@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assetes/css/style.css">
+    <script src="assetes/js/script.js" defer></script> <!-- Include the external JS file -->
+</head>
+<body>
+<div class="container">
+  <div id="loader" style="display: none;">
+    <img src="assetes/images/load-37_256.gif" alt="Loading...">
+</div>
+  <div class="card">
+    <form id="pitchForm" action="#" method="POST">
+      <div class="input-group">
+        <label for="description">Describe what you're selling (your company website will do).</label>
+        <textarea id="description" name="description" rows="3"></textarea>
+      </div>
+      <div class="input-group">
+        <label for="customer">Who is your customer? You can also enter a company website.</label>
+        <input type="text" id="customer" name="customer">
+      </div>
+      <div class="input-group">
+        <label for="title">What is the title of your buyer/customer?</label>
+        <input type="text" id="title" name="title">
+      </div>
+      
+      <!-- Hidden input field to store the type value -->
+      <input type="hidden" id="typeField" name="type" value="">
+      
+      <div class="options">
+        <div class="option" data-value="hook">
+          <span>Add a hook</span>
+        </div>
+        <div class="option" data-value="intro">
+          <span>Give Intro</span>
+        </div>
+        <div class="option" data-value="meeting">
+          <span>Solicit a meeting</span>
+        </div>
+        <div class="option" data-value="friendly">
+          <span>Friendly</span>
+        </div>
+        <div class="option" data-value="professional">
+          <span>Professional</span>
+        </div>
+        <div class="option" data-value="lighter">
+          <span>Lighter</span>
+        </div>
+        <div class="option" data-value="humorous">
+          <span>Humorous</span>
+        </div>
+        <div class="option" data-value="urgency">
+          <span>Add Urgency</span>
+        </div>
+        <div class="option" data-value="formal">
+          <span>Formal</span>
+        </div>
+        <div class="option" data-value="concise">
+          <span>Concise</span>
+        </div>
+        <div class="option" data-value="lengthy">
+          <span>Lengthy</span>
+        </div>
+        <div class="option" id="suggestionOption">
+          <span>Suggestion +</span>
+        </div>
+        <div id="suggestionContainer" class="input-suggestion">
+          <input type="text" id="suggestionInput" placeholder="Type your suggestion here...">
+          <button type="button" id="addSuggestion">Add Suggestion</button>
+        </div>
+      </div>
+      <div class="button-group">
+        <button type="submit">Generate Pitch</button>
+        <button type="reset">Reset</button>
+      </div>
+    </form>
+  </div>
+  <div class="right-panel">
+    <!-- Right panel content goes here -->
+  </div>
+</div>
+</body>
+</html>
