@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer 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"
+                "Authorization": "Bearer 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"
             },
             body: JSON.stringify(requestData)
         })
@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (data.choices && data.choices.length > 0) {
                 rightPanel.innerHTML = `
                     <div>${data.choices[0].message.content.replace(/\n/g, '<br>')}</div>
-                    <button id="copyButton">Copy</button>
+                    <button id="copyButton"><img src="../image/copy.png" /></button>
                 `;
                 
                 // Add copy functionality to the new button

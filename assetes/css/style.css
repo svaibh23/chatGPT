@@ -1,8 +1,15 @@
 body {
-  background-color: #f2f2f2;
-  font-family: Arial, sans-serif;
+  background-color: rgb(239 231 221);
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .container {
@@ -11,14 +18,16 @@ body {
   align-items: center;
   min-height: 100vh;
   padding: 20px;
+  max-width: 1170px;
+  margin: 0 auto;
 }
 
 .card {
-  background-color: #fff;
+  /* background-color: #fff; */
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
   padding: 30px;
-  width: 600px;
+  width: 50%;
 }
 
 .input-group {
@@ -40,7 +49,7 @@ textarea {
 }
 
 button {
-  background-color: #4CAF50;
+  background-color: #5271ff;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -51,7 +60,7 @@ button {
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #5770e0;
 }
 
 .button-group {
@@ -73,12 +82,18 @@ button:hover {
 .option {
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 10px 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 10px;
   margin-right: 10px;
-  width: 150px;
+  /* width: 150px; */
+  cursor: pointer;
+  background: #fff;
+}
+
+div#suggestionContainer input#suggestionInput {
+  margin-bottom: 10px;
 }
 
 .option img {
@@ -86,27 +101,107 @@ button:hover {
 }
 
 .option span {
-  font-size: 16px;
+  font-size: 15px;
+  padding-left: 5px;
 }
 
 .right-panel {
-  width: 400px;
+  width: 50%;
   margin-left: 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 20px;
+  background: #fff;
 }
 
- /* Example styling for the selected class */
-        .selected {
-            background-color: #d3d3d3;
-        }
-        .error-message {
-            color: red;
-            font-size: 0.875em;
-            margin-top: 0.25em;
-        }
-        .input-suggestion {
-            display: none;
-            margin-top: 10px;
-        }
+/* Example styling for the selected class */
+.selected {
+  background-color: #5271ff;
+  color: #fff;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.875em;
+  margin-top: 0.25em;
+}
+
+.input-suggestion {
+  display: none;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.right-panel>div {
+  min-height: 540px;
+}
+
+.right-panel button {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  width: 100%;
+  text-align: right;
+  padding: 0;
+  position: relative;
+  top: 12px;
+  left: 10px;
+}
+
+.right-panel button img {
+  cursor: pointer;
+  width: 30px;
+}
+
+
+.right-panel button:hover {
+  background-color: transparent;
+}
+
+.option img {
+  width: 20px;
+}
+
+button[type="reset"] {
+  background: #000;
+}
+div#loader {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgb(0 0 0 / 15%);
+}
+.loaderinner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(0 0 0 / 15%);
+}
+div#loader img {
+  max-width: 100px;
+}
+@media only screen and (max-width: 767px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .card,
+  .right-panel {
+    width: 100%;
+  }
+
+  .card {
+    padding: 0;
+  }
+
+  .right-panel {
+    margin: 50px 0 50px 0;
+  }
+}

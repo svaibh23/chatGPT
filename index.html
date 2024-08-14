@@ -1,86 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="assetes/css/style.css">
-    <script src="assetes/js/script.js" defer></script> <!-- Include the external JS file -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="assetes/css/style.css">
+  <script src="assetes/js/script.js" defer></script> <!-- Include the external JS file -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
-<div class="container">
-  <div id="loader" style="display: none;">
-    <img src="assetes/images/load-37_256.gif" alt="Loading...">
-</div>
-  <div class="card">
-    <form id="pitchForm" action="#" method="POST">
-      <div class="input-group">
-        <label for="description">Describe what you're selling (your company website will do).</label>
-        <textarea id="description" name="description" rows="3"></textarea>
+  <div class="container">
+    <div id="loader" style="display: none;">
+      <div class="loaderinner">
+        <img src="assetes/images/load-37_256.gif" alt="Loading...">
       </div>
-      <div class="input-group">
-        <label for="customer">Who is your customer? You can also enter a company website.</label>
-        <input type="text" id="customer" name="customer">
+    </div>
+    <div class="card">
+      <form id="pitchForm" action="#" method="POST">
+        <div class="input-group">
+          <!-- <label for="description">Describe what you're selling (your company website will do).</label> -->
+          <textarea id="description" name="description" rows="3"
+            placeholder="Describe what you're selling (your company website will do)."></textarea>
+        </div>
+        <div class="input-group">
+          <!-- <label for="customer">Who is your customer? You can also enter a company website.</label> -->
+          <textarea type="text" id="customer" name="customer" rows="3"
+            placeholder="Who is your customer? You can also enter a company website."></textarea>
+        </div>
+        <div class="input-group">
+          <!-- <label for="title">What is the title of your buyer/customer?</label> -->
+          <textarea type="text" id="title" name="title" rows="3"
+            placeholder="What is the title of your buyer/customer?"></textarea>
+        </div>
+
+        <!-- Hidden input field to store the type value -->
+        <input type="hidden" id="typeField" name="type" value="">
+
+        <div class="options">
+          <div class="option" data-value="hook">
+            <!-- <img src="./assetes/images/pinterest.svg" /> -->
+            🎣
+            <span>Add a hook</span>
+          </div>
+          <div class="option" data-value="intro">
+            🤝
+            <!-- <img src="./assetes/images/pinterest.svg" /> -->
+            <span>Give Intro</span>
+          </div>
+          <div class="option" data-value="meeting">
+            📅
+            <!-- <img src="./assetes/images/pinterest.svg" /> -->
+            <span>Solicit a meeting</span>
+          </div>
+          <div class="option" data-value="friendly">
+            😊
+            <!-- <img src="./assetes/images/pinterest.svg" /> -->
+            <span>Friendly</span>
+          </div>
+          <div class="option" data-value="professional">
+            😊
+            <!-- <img src="./assetes/images/pinterest.svg" /> -->
+            <span>Professional</span>
+          </div>
+          <div class="option" data-value="lighter">
+            🦋
+            <!-- <img src="./assetes/images/pinterest.svg" /> -->
+            <span>Lighter</span>
+          </div>
+          <div class="option" data-value="humorous">
+            😂
+            <!-- <img src="./assetes/images/pinterest.svg" /> -->
+            <span>Humorous</span>
+          </div>
+          <div class="option" data-value="urgency">
+            <img src="./assetes/images/pinterest.svg" />
+            <span>Add Urgency</span>
+          </div>
+          <div class="option" data-value="formal">
+            🎩
+            <!-- <img src="./assetes/images/pinterest.svg" /> -->
+            <span>Formal</span>
+          </div>
+          <div class="option" data-value="concise">
+            🎯
+            <!-- <img src="./assetes/images/pinterest.svg" /> -->
+            <span>Concise</span>
+          </div>
+          <div class="option" data-value="lengthy">
+            📜
+            <!-- <img src="./assetes/images/pinterest.svg" /> -->
+            <span>Lengthy</span>
+          </div>
+          <div class="option selected" id="suggestionOption">
+            <span>+ Suggestion</span>
+          </div>
+          <div id="suggestionContainer" class="input-suggestion">
+            <input type="text" id="suggestionInput" placeholder="Type your suggestion here...">
+            <button type="button" id="addSuggestion">Add Suggestion</button>
+          </div>
+        </div>
+        <div class="button-group">
+          <button type="submit">Generate Pitch</button>
+          <button type="reset">Reset</button>
+        </div>
+      </form>
+    </div>
+    <div class="right-panel">
+      <div>
       </div>
-      <div class="input-group">
-        <label for="title">What is the title of your buyer/customer?</label>
-        <input type="text" id="title" name="title">
-      </div>
-      
-      <!-- Hidden input field to store the type value -->
-      <input type="hidden" id="typeField" name="type" value="">
-      
-      <div class="options">
-        <div class="option" data-value="hook">
-          <span>Add a hook</span>
-        </div>
-        <div class="option" data-value="intro">
-          <span>Give Intro</span>
-        </div>
-        <div class="option" data-value="meeting">
-          <span>Solicit a meeting</span>
-        </div>
-        <div class="option" data-value="friendly">
-          <span>Friendly</span>
-        </div>
-        <div class="option" data-value="professional">
-          <span>Professional</span>
-        </div>
-        <div class="option" data-value="lighter">
-          <span>Lighter</span>
-        </div>
-        <div class="option" data-value="humorous">
-          <span>Humorous</span>
-        </div>
-        <div class="option" data-value="urgency">
-          <span>Add Urgency</span>
-        </div>
-        <div class="option" data-value="formal">
-          <span>Formal</span>
-        </div>
-        <div class="option" data-value="concise">
-          <span>Concise</span>
-        </div>
-        <div class="option" data-value="lengthy">
-          <span>Lengthy</span>
-        </div>
-        <div class="option" id="suggestionOption">
-          <span>Suggestion +</span>
-        </div>
-        <div id="suggestionContainer" class="input-suggestion">
-          <input type="text" id="suggestionInput" placeholder="Type your suggestion here...">
-          <button type="button" id="addSuggestion">Add Suggestion</button>
-        </div>
-      </div>
-      <div class="button-group">
-        <button type="submit">Generate Pitch</button>
-        <button type="reset">Reset</button>
-      </div>
-    </form>
+      <button id="copyButton"><img src="./assetes/images/copy.png" /></button>
+
+    </div>
   </div>
-  <div class="right-panel">
-    <!-- Right panel content goes here -->
-  </div>
-</div>
 </body>
+
 </html>
